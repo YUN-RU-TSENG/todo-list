@@ -38,8 +38,8 @@ const vm = new Vue({
       time: null,
       level: "",
     },
-    // 表單編輯模式，一共有新增、更新，當模式為新增時 false、為更新時 true，依照此變數決定表單呈現的模式
-    isUpdate: false,
+    // 表單編輯模式，一共有新增、更新
+    editMode: 'add',
     isShow: false,
     levelOption: [
       {
@@ -73,7 +73,7 @@ const vm = new Vue({
     },
     resetCacheTodo() {
       this.cacheTodoID = null;
-      this.isUpdate = false;
+      this.editMode = 'add';
       this.cacheTodo = {
         name: "",
         ID: null,
@@ -83,15 +83,15 @@ const vm = new Vue({
     },
     setCacheTodo(todoID) {
       this.cacheTodoID = todoID;
-      this.isUpdate = true;
+      this.editMode = 'update';
       this.cacheTodo = {
         ...this.todo.find((item) => item.ID === todoID),
       };
     },
     // 表單會隨著新增、編輯不同模式變動資料
     setTodo() {
-      if (this.isUpdate) this.updateTodo();
-      else this.addTodo();
+      if (this.editMode === 'update') this.updateTodo();
+      else if (this.editMode === 'add')this.addTodo();
     },
     tagStyle(todoLevel) {
       switch (todoLevel) {
@@ -152,10 +152,10 @@ const vm = new Vue({
                         type="button"
                         @click.native="toggle(), resetCacheTodo()">Cancel</base-button>
                 <base-button level="primary"
-                        v-if="isUpdate"
+                        v-if="editMode === 'update'"
                         type="submit">Update</base-button>
                 <base-button level="primary"
-                        v-else
+                v-if="editMode === 'add'"
                         type="submit">ADD</base-button>
             </div>
         </add-card>
