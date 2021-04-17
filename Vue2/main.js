@@ -17,17 +17,17 @@ import AddCard from "./component/AddCard.js";
 const vm = new Vue({
   el: "#app",
   components: {
-    "svg-add": SvgAdd,
-    "svg-bucket": SvgBucket,
-    "svg-pencil": SvgPencil,
-    "svg-checked": SvgChecked,
-    "base-tag": BaseTag,
-    "base-title": BaseTitle,
-    "base-input": BaseInput,
-    "base-button": BaseButton,
-    "base-select": BaseSelect,
-    "todo-item": TodoItem,
-    "add-card": AddCard,
+ SvgAdd,
+ SvgBucket,
+ SvgPencil,
+ SvgChecked,
+ BaseTag,
+ BaseTitle,
+ BaseInput,
+ BaseButton,
+ BaseSelect,
+ TodoItem,
+ AddCard,
   },
   data: {
     todo: [
@@ -53,7 +53,7 @@ const vm = new Vue({
     },
     updateTodoID: "",
     // 表單編輯模式，有 add update 模式
-    formToDoMode: "add",
+    formToDoMode: "",
     todoLevelOptions: [
       {
         value: "hight-level",
@@ -115,6 +115,7 @@ const vm = new Vue({
       handler(val) {
         switch (val) {
           case "add":
+          case "":
             return this.initFormTodo()
           case "update":
             return (this.formToDo = {
@@ -152,7 +153,7 @@ const vm = new Vue({
      * @param {String} formToDoMode 可以填入 add、update
      * @param {Number} todoID 當下選中的 todoID，當為 update 模式的時候再行填入
      */
-    updateFormMode(formToDoMode = 'add', todoID = null) {
+    updateFormMode(formToDoMode = '', todoID = null) {
       this.formToDoMode = formToDoMode;
       this.updateTodoID = todoID ? todoID : '';
     },
@@ -178,7 +179,7 @@ const vm = new Vue({
         </todo-item>
         <add-card class="add-card"
                 v-show="isFormTodoShow"
-                @submit="handler(), toggleFormTodo(false)">
+                @submit="handler(), toggleFormTodo(false), updateFormMode()">
             <base-title tag="h2"
                         level="primary"
                         :isDark="true">ADD TODO</base-title>
@@ -197,7 +198,7 @@ const vm = new Vue({
             <div class="add-card-buttons">
                 <base-button level="secondary"
                         type="button"
-                        @click.native="toggleFormTodo(false), updateFormMode('add')">Cancel</base-button>
+                        @click.native="toggleFormTodo(false), updateFormMode('')">Cancel</base-button>
                 <base-button level="primary"
                         type="submit"
                         v-if="formToDoMode === 'update'">Update</base-button>
