@@ -168,6 +168,7 @@ function tagText(todoLevel) {
       return "輕度";
   }
 }
+
 // 初始渲染後，針對空資料進行首次渲染
 window.addEventListener("load", renderTodo);
 $todoWrapper.addEventListener("click", editTodo);

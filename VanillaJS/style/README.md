@@ -193,3 +193,60 @@ function toggleElement(element) {
 
 接著將以上功能綁定到 DOM 中即完成。
 
+## 學習
+
+### proxy
+
+### setAttribute
+可以設置 element 屬性
+```javascript
+Element.setAttribute(name, value)
+```
+
+和 element.style.display = '' 無使用上的明顯差異。
+[When to use setAttribute vs .attribute= in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/3919291/when-to-use-setattribute-vs-attribute-in-javascript/36581696#36581696)
+
+
+### DocumentFragment
+
+輕量的 `Documemt` API，對於 `DocumentFragment` 的操作不會直接影響到 `Document`，也不會觸發渲染、耗費效能。
+
+普通和 `appendChild` 應用，只會插入 `DocumentFragment` 子節點而非其本身，並且多個子結點會一次被插入，不會多次重新渲染。
+
+一次插入多個 `li` 至 `ul` 中：
+```javascript
+const list = ['apple', 'banana', 'pie']
+const $ul = document.querySelector('ul')
+const $fragment = document.createDocumentFragment()
+
+list.forEach(item =>
+{
+    const $li = document.createElement('li')
+    $li.innerHTML = item
+    $fragment.appendChild($li)
+})
+
+$ul.appendChild($fragment)
+```
+
+[DocumentFragment - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/DocumentFragment)
+
+### append vs appendChild
+
+結論：用 `append` 更好。
+
+#### append
+
+在現有元素插入最後的子節點，可以一次插入多個節點、DomString（Text 節點）
+
+```
+append(...[DomString|Node])
+```
+
+#### appendChild
+
+在現有元素插入一個最後的子節點，插入一個節點，且只能插入 `Node`
+
+```
+appendChild(node)
+```
