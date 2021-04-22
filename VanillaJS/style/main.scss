@@ -1,0 +1,220 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    &:active, &:visited, &:checked, &:focus {
+        outline: none;
+    }
+}
+
+
+// 組件
+.tag {
+    padding: 5px 13px;
+    border-radius: 16px;
+    font: normal normal normal 12px Helvetica Neue;
+    &.blue {
+        background-color: #24C3C2;
+    }
+    &.green {
+        background-color: #A4C324;
+    }
+    &.orange {
+        background-color: #C69B93;
+    }
+}
+
+.title {
+    &.primary {
+        font: normal normal normal 20px Helvetica Neue;
+        color: #9FA3A7;
+    }
+    &.secondary {
+        font: normal normal normal 16px Helvetica Neue;
+        color: #9FA3A7;
+
+    }
+    &.third {
+        font: normal normal normal 12px Helvetica Neue;
+        color: #848797;
+    }
+    &.dark.primary {
+        font: normal normal bold 20px Helvetica Neue;
+        color: #6F7377;
+    }
+    &.dark.secondary {
+        font: normal normal bold 16px Helvetica Neue;
+        color: #6F7377;
+
+    }
+    &.dark.third {
+        font: normal normal bold 12px Helvetica Neue;
+        color: #6F7377;
+    }
+}
+
+.input {
+    display: block;
+    text-align: left;
+    font: normal normal bold 16px/19px Helvetica Neue;
+    color: #6F7377;
+    input {
+        margin-top: 7px;
+        width: 100%;
+        background: #F7F7F7 0% 0% no-repeat padding-box;
+        border: 1px solid #B5BABF;
+        border-radius: 4px;
+        outline: none;
+        font: normal normal normal 16px/18px Helvetica Neue;
+        padding: 12px 14px;
+        &:checked, &:active, &:focus {
+            border: 1px solid #24C3C2;
+        }
+    }
+}
+
+.button {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 9px 19px;
+    border: none;
+    font: normal normal bold 20px/25px Helvetica Neue;
+    &:hover {
+        background: #F7F7F7 0% 0% no-repeat padding-box;
+    }
+    &.primary {
+        color: #24C3C2;
+    }
+    &.secondary {
+        color: #6F7377;
+    }
+}
+
+.select {
+    display: block;
+    text-align: left;
+    font: normal normal bold 16px/19px Helvetica Neue;
+    color: #6F7377;
+    select {
+        margin-top: 7px;
+        width: 100%;
+        background: #F7F7F7 0% 0% no-repeat padding-box;
+        border: 1px solid #B5BABF;
+        border-radius: 4px;
+        outline: none;
+        font: normal normal normal 16px/18px Helvetica Neue;
+        padding: 12px 14px;
+    }
+}
+
+
+// 首頁
+body {
+    background-color: #2E3545;
+}
+
+#app {
+    width: 95%;
+    margin: auto;
+    padding-top: 48px;
+    min-height: 100vh;
+    position: relative;
+    @media (min-width: 576px) {
+        width: 540px;
+    }
+    @media (min-width: 768px) {
+        width: 608px;
+    }
+}
+
+.todo {
+
+    background-color: #252B3C;
+    border-radius: 4px;
+    padding: 24px;
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    h2 {
+        margin-bottom: 4px;
+    }
+    p {
+        margin-bottom: 12px;
+    }
+    img {
+        width: 24px;
+        height: 24px;
+    }
+    button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        &:not(:first-of-type) {
+            margin-left: 8px;
+        }
+    }
+
+    &-title {
+        text-align: left;
+        padding-left: 12px;
+        margin-bottom: 28px;
+    }
+
+    .tag {
+        float: right;
+    }
+}
+
+.add-card {
+    background: #EEEEEE 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    padding: 36px 24px;
+    width: 90%;
+    height: 475px;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    @media (min-width: 576px) {
+        width: 420px;
+    }
+    h2 {
+        text-align: left;
+        margin-bottom: 43px;
+    }
+
+    label {
+        margin-bottom: 18px;
+    }
+
+    &-buttons {
+        text-align: right;
+        button:first-child {
+            margin-right: 4px;
+        }
+    }
+}
+
+button.add {
+    background: #24C3C2 0% 0% no-repeat padding-box;
+    border-radius: 60px;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 32px;
+    bottom: 72px;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+    svg {
+        width: 32px;
+    }
+}
