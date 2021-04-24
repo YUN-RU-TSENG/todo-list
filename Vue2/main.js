@@ -31,7 +31,6 @@ const vm = new Vue({
   },
   data: {
     todo: [],
-    cacheTodoID: "",
     cacheTodo: {
       name: "",
       ID: null,
@@ -39,7 +38,7 @@ const vm = new Vue({
       level: "",
     },
     // 表單編輯模式，一共有新增、更新
-    editMode: 'add',
+    editMode: "add",
     isShow: false,
     levelOption: [
       {
@@ -56,13 +55,14 @@ const vm = new Vue({
       },
     ],
   },
-  computed: {},
   methods: {
     addTodo() {
       this.todo.push({ ...this.cacheTodo, ID: Date.now() });
     },
     updateTodo() {
-      const index = this.todo.findIndex((item) => item.ID === this.cacheTodoID);
+      const index = this.todo.findIndex(
+        (item) => item.ID === this.cacheTodo.ID
+      );
       this.todo.splice(index, 1, this.cacheTodo);
     },
     deleteTodo(index) {
@@ -72,8 +72,7 @@ const vm = new Vue({
       this.isShow = !this.isShow;
     },
     resetCacheTodo() {
-      this.cacheTodoID = null;
-      this.editMode = 'add';
+      this.editMode = "add";
       this.cacheTodo = {
         name: "",
         ID: null,
@@ -82,16 +81,13 @@ const vm = new Vue({
       };
     },
     setCacheTodo(todoID) {
-      this.cacheTodoID = todoID;
-      this.editMode = 'update';
-      this.cacheTodo = {
-        ...this.todo.find((item) => item.ID === todoID),
-      };
+      this.editMode = "update";
+      this.cacheTodo = { ...this.todo.find((item) => item.ID === todoID) };
     },
     // 表單會隨著新增、編輯不同模式變動資料
     setTodo() {
-      if (this.editMode === 'update') this.updateTodo();
-      else if (this.editMode === 'add')this.addTodo();
+      if (this.editMode === "update") this.updateTodo();
+      else if (this.editMode === "add") this.addTodo();
     },
     tagStyle(todoLevel) {
       switch (todoLevel) {
@@ -114,7 +110,7 @@ const vm = new Vue({
       }
     },
     formateDate(todoTime) {
-      return dayjs(todoTime).format("YYYY年MM月DD日");
+      return dayjs(todoTime).format("YYYY 年 MM 月 DD 日");
     },
   },
   template: `
@@ -159,6 +155,6 @@ const vm = new Vue({
                         type="submit">ADD</base-button>
             </div>
         </add-card>
-        <button class="add" @click="toggle()"><svg-add/></button>
+        <button class="add" @click="toggle"><svg-add/></button>
     </main>`,
 });
