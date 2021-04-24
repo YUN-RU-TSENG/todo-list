@@ -1,0 +1,32 @@
+/*  本檔案為斷點 mixin */
+
+/**
+* 斷點 mixin
+* 使用方法：在需要斷點位置添加以下語法，依照需求有電腦、平板、手機：
+*
+* 斷點，分為以下三種：
+* desktop 指的是在電腦以上包含電腦的斷點
+* tablet 指的是在平板以上包含平板的斷點
+* phone 指的是在手機以上包含手機的斷點
+*
+* @include MediaQuery(desktop) {
+*   padding: 24px;
+* }
+* @include MediaQuery(tablet) {
+*   padding: 24px;
+* }
+* @include MediaQuery(phone) {
+*   padding: 24px;
+* }
+*
+*/
+
+$phone: 576px;
+$tablet: 768px;
+$desktop: 992px;
+
+@mixin MediaQuery($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}

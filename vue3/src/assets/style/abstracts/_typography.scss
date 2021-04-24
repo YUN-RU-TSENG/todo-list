@@ -1,0 +1,37 @@
+/* 本檔案為字體設置，包含字體引入、樣式、mixin、字體顏色 */
+
+// 字體引入
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+// font style
+$font-primary: 'Roboto', sans-serif;
+
+
+// 文字顏色
+/**
+* font-color: 使用方法：map-get($font-color , "primary")
+* 文字顏色，共依照使用情境分為三種顏色
+* primary 標題
+* regular 內文
+* placeholder 佔位符
+*/
+$font-color: ("primary": #303133, "regular": #84868b, "placeholder": #C0C4CC, "yellow": $yellow);
+
+
+/**
+* 文字 mixin
+* 使用方法： @include font($size: 12px, $family: $font-primary);
+* 依序設置文字：字重、大小、字體、顏色
+*
+* font 簡寫規則：[ [ <'font-style'> || <font-variant-css21> || <'font-weight'> ||
+* <'font-stretch'> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'> ]
+*
+* 在此有多個默認參數，所以每個值不一定需要填寫即有預設值，需要填寫的要寫上 $xxx: 給的數值
+* @include font($weight: bold, $size: 12px, $family: $font-primary, $color: map-get($font-color , "primary"));
+*/
+
+@mixin font($weight: 400, $size: 16px, $family: $font-primary, $color: map-get($font-color , "primary" )) {
+  font: $weight $size $family;
+  color: $color;
+}
