@@ -9,18 +9,18 @@
                required
                type="text"
                :value="name"
-               @update:value="$emit('update:name')" />
+               @update:value="$emit('update:name', $event)" />
     <BaseSelect label="重要程度"
-                v-model:value="cacheTodo.level"
                 required
                 name="level"
                 :value="level"
-                @update:value="$emit('update:level')" />
+                :options="options"
+                @update:value="$emit('update:level', $event)" />
     <BaseInput label="代辦時間"
                required
                type="date"
                :value="time"
-               @update:value="$emit('update:time')" />
+               @update:value="$emit('update:time', $event)" />
     <div class="add-card-buttons">
       <BaseButton level="secondary"
                   type="button"
@@ -36,24 +36,29 @@
 </template>
 
 <script>
-export default {
-  name: 'AddCard',
-  props: {
-    level: {
-      type: String,
-      required: true
+  export default {
+    name: 'AddCard',
+    props: {
+      level: {
+        required: true,
+      },
+      name: {
+        required: true,
+      },
+      time: {
+        required: true,
+      },
+      options: {
+        type: Array,
+        required: true,
+      },
+      editMode: {
+        type: String,
+        required: true,
+      },
     },
-    name: {
-      type: String,
-      required: true
-    },
-    time: {
-      type: String,
-      required: true
-    }
-  },
-  emits: ['submit', 'update:level', 'update:name', 'update:time']
-}
+    emits: ['submit', 'update:level', 'update:name', 'update:time'],
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -74,16 +79,16 @@ export default {
       width: 420px;
     }
 
-    &::v-deep .title {
+    ::v-deep(.title) {
       text-align: left;
       margin-bottom: 43px;
     }
 
-    &::v-deep label {
+    ::v-deep(label) {
       margin-bottom: 18px;
     }
 
-    &::v-deep .add-card-buttons {
+    ::v-deep(.add-card-buttons) {
       text-align: right;
       button:first-child {
         margin-right: 4px;

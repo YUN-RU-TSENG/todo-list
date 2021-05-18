@@ -17,49 +17,49 @@
 </template>
 
 <script>
-export default {
-  name: 'BaseSelect',
-  model: {
-    prop: 'value',
-    event: 'change'
-  },
-  props: {
-    label: {
-      type: String,
-      required: true
+  export default {
+    name: 'BaseSelect',
+    model: {
+      prop: 'value',
+      event: 'change',
     },
-    name: {
-      type: String,
-      required: true
+    props: {
+      label: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+      value: {
+        required: true,
+      },
+      options: {
+        type: Array,
+        required: true,
+      },
     },
-    value: {
-      required: true
-    },
-    options: {
-      type: Array,
-      required: true
-    }
-  },
-  emits: ['update:value'],
-  inheritAttrs: false
-}
+    emits: ['update:value'],
+    inheritAttrs: false,
+  };
 </script>
 
 <style lang="scss" scoped>
-.select {
+  .select {
     display: block;
     text-align: left;
     font: normal normal bold 16px/19px Helvetica Neue;
-    color: #6F7377;
+    color: #6f7377;
     select {
-        margin-top: 7px;
-        width: 100%;
-        background: #F7F7F7 0% 0% no-repeat padding-box;
-        border: 1px solid #B5BABF;
-        border-radius: 4px;
-        outline: none;
-        font: normal normal normal 16px/18px Helvetica Neue;
-        padding: 12px 14px;
+      margin-top: 7px;
+      width: 100%;
+      background: #f7f7f7 0% 0% no-repeat padding-box;
+      border: 1px solid #b5babf;
+      border-radius: 4px;
+      outline: none;
+      font: normal normal normal 16px/18px Helvetica Neue;
+      padding: 12px 14px;
     }
-}
+  }
 </style>

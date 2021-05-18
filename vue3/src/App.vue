@@ -19,11 +19,12 @@
                 @editTodo="setCacheTodo($event), toggle()"
                 :key="item.ID" />
     </template>
-    <AddCard class="add-card"
-             v-show="isShow"
+    <AddCard v-show="isShow"
              v-model:name="cacheTodo.name"
              v-model:level="cacheTodo.level"
              v-model:time="cacheTodo.time"
+             :editMode="editMode"
+             :options="levelOption"
              @cancel="toggle(), resetCacheTodo()"
              @submit="setTodo(), toggle(), resetCacheTodo()" />
     <button class="add"
@@ -83,7 +84,7 @@ export default {
   },
   methods: {
     addTodo () {
-      this.todo.push({ ...this.cacheTodo, ID: Date.now() })
+      this.todo.push({ ...this.cacheTodo, ID: Date.now().toString() })
     },
     updateTodo () {
       const index = this.todo.findIndex(
