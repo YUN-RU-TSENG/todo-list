@@ -66,7 +66,7 @@
 ## 項目技術
 
 ### Vanilla JS
-* Javascript(Proxy)
+* Javascript
 * SCSS、HTML5
 * Dayjs
 
