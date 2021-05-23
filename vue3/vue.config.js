@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/todo-list/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/todo-list/dist/" : "/",
   css: {
     loaderOptions: {
       /**
