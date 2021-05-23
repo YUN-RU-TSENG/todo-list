@@ -11,11 +11,11 @@
     一個包含 Vanilla JS、Vue2、Vue3 版本的 TODO list 練習項目。
     <br />
     <br />
-    <a href="https://github.com/YUN-RU-TSENG/todo-list">View Vanilla js Demo</a>
+    <a href="https://github.com/YUN-RU-TSENG/todo-list">Vanilla js Demo</a>
         .
-    <a href="https://github.com/YUN-RU-TSENG/todo-list">View Vue2 Demo</a>
+    <a href="https://github.com/YUN-RU-TSENG/todo-list">Vue2 Demo</a>
     .
-    <a href="https://github.com/YUN-RU-TSENG/todo-list">View Vue3 Demo</a>
+    <a href="https://github.com/YUN-RU-TSENG/todo-list">Vue3 Demo</a>
   </p>
 </p>
 
@@ -46,11 +46,11 @@
 
 ## 項目簡介
 
-<img src="https://i.imgur.com/MuMXUNd.png" alt="project img" width="100%">
+<img src="https://i.imgur.com/yH8ADnF.png" alt="project img" width="100%">
 
 簡易的 TODO List，可以隨手紀錄代辦事項。
 
-### 項目功能
+## 項目功能
 
 * CRUD 代辦事項
 * 區分完成、未完成待辦事項
@@ -70,7 +70,7 @@
 * Dayjs
 
 ### Vue3
-* Vue-CLI
+* Vue CLI
 * Vue3
 * SCSS、HTML5
 * Day.js
