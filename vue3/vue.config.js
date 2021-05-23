@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: process.env.NODE_ENV === "production" ? "/todo-list/" : "/",
   css: {
     loaderOptions: {
       /**
@@ -11,4 +12,4 @@ module.exports = {
       }
     }
   }
-}
+};
