@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/YUN-RU-TSENG/todo-list">
-    <img src="https://i.imgur.com/xrlo94Y.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/xrlo94Y.png" alt="Logo" width="80" height="80"/>
   </a>
 
   <h3 align="center">TODO List</h3>
@@ -46,7 +46,7 @@
 
 ## 項目簡介
 
-<div align="center>
+<div align="center">
     <img src="https://i.imgur.com/yH8ADnF.png" alt="project img" width="80%"/>
 </div>
 
