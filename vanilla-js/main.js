@@ -38,7 +38,7 @@ const handler = {
   },
   set(target, prop, value) {
     Reflect.set(...arguments);
-    // 更動 edit 模式，form 表單按鈕呈現對應的岸鳥
+    // 更動 edit 模式，form 表單按鈕呈現對應的按鈕
     if (prop === "editMode") {
       $formAdd.style.display = value === "add" ? "inline-block" : "none";
       $formUpdate.style.display = value === "update" ? "inline-block" : "none";
