@@ -84,5 +84,6 @@
    ```
 2. Install NPM packages (Vue3 ver)
    ```sh
+   cd vue3
    npm install
    ```
