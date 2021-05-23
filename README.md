@@ -47,7 +47,7 @@
 ## 項目簡介
 
 <div align="center">
-    <img src="https://i.imgur.com/yH8ADnF.png" alt="project img" width="80%"/>
+    <img src="https://i.imgur.com/kcXFF9y.png" alt="project img" width="80%"/>
 </div>
 
 簡易的 TODO List，可以隨手紀錄代辦事項。
