@@ -15,7 +15,7 @@
         .
     <a href="https://yun-ru-tseng.github.io/todo-list/vue2/index.html">Vue2 Demo</a>
     .
-    <a href="https://github.com/YUN-RU-TSENG/todo-list/dist/index.html">Vue3 Demo</a>
+    <a href="https://github.com/YUN-RU-TSENG/todo-list/vue3/dist/index.html">Vue3 Demo</a>
   </p>
 </p>
 
