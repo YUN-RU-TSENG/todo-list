@@ -37,6 +37,7 @@ const vm = new Vue({
       time: null,
       level: "",
     },
+    minDate: dayjs().format('YYYY-MM-DD'),
     // 表單編輯模式，一共有新增、更新
     editMode: "add",
     isShow: false,
@@ -142,6 +143,7 @@ const vm = new Vue({
             <base-input label="代辦時間"
                         required
                         type="date"
+                        :min="minDate"
                         v-model="cacheTodo.time"/>
             <div class="add-card-buttons">
                 <base-button level="secondary"
