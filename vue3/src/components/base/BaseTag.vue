@@ -6,19 +6,19 @@
 </template>
 
 <script>
-export default {
-  name: 'BaseTag',
-  template: '',
-  props: {
-    color: {
-      type: String,
-      required: true,
-      validation (val) {
-        return ['blue', 'green', 'orange'].includes(val)
-      }
-    }
-  }
-}
+  export default {
+    name: 'BaseTag',
+    template: '',
+    props: {
+      color: {
+        type: String,
+        required: true,
+        validation(val) {
+          return ['blue', 'green', 'orange'].includes(val);
+        },
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -27,13 +27,13 @@ export default {
     border-radius: 16px;
     font: normal normal normal 12px Helvetica Neue;
     &.blue {
-        background-color: #24C3C2;
+      background-color: #24c3c2;
     }
     &.green {
-        background-color: #A4C324;
+      background-color: #a4c324;
     }
     &.orange {
-        background-color: #C69B93;
+      background-color: #c69b93;
     }
-}
+  }
 </style>

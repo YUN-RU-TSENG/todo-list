@@ -17,7 +17,7 @@
 </template>
 
 <script>
-export default {
-  name: 'SvgPencil'
-}
+  export default {
+    name: 'SvgPencil',
+  };
 </script>

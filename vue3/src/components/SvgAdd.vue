@@ -20,7 +20,7 @@
 </template>
 
 <script>
-export default {
-  name: 'SvgAdd'
-}
+  export default {
+    name: 'SvgAdd',
+  };
 </script>

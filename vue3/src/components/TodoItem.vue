@@ -19,28 +19,28 @@
 </template>
 
 <script>
-import SvgBucket from './SvgBucket.vue'
-import SvgChecked from './SvgChecked.vue'
-import SvgPencil from './SvgPencil.vue'
+  import SvgBucket from './SvgBucket.vue';
+  import SvgChecked from './SvgChecked.vue';
+  import SvgPencil from './SvgPencil.vue';
 
-export default {
-  name: 'TodoItem',
-  components: {
-    SvgChecked,
-    SvgBucket,
-    SvgPencil
-  },
-  props: {
-    ID: { type: String, required: true },
-    name: { type: String, required: true },
-    time: { type: String, required: true },
-    formateTime: { type: String, required: true },
-    level: { type: String, required: true },
-    tagStyle: { type: String, required: true },
-    tagText: { type: String, required: true }
-  },
-  emits: ['deleteTodo', 'editTodo']
-}
+  export default {
+    name: 'TodoItem',
+    components: {
+      SvgChecked,
+      SvgBucket,
+      SvgPencil,
+    },
+    props: {
+      ID: { type: String, required: true },
+      name: { type: String, required: true },
+      time: { type: String, required: true },
+      formateTime: { type: String, required: true },
+      level: { type: String, required: true },
+      tagStyle: { type: String, required: true },
+      tagText: { type: String, required: true },
+    },
+    emits: ['deleteTodo', 'editTodo'],
+  };
 </script>
 
 <style lang="scss" scoped>

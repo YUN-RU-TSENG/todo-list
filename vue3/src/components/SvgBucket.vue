@@ -15,7 +15,7 @@
 </template>
 
 <script>
-export default {
-  name: 'SvgBucket'
-}
+  export default {
+    name: 'SvgBucket',
+  };
 </script>

@@ -79,16 +79,16 @@
       width: 420px;
     }
 
-    ::v-deep(.title) {
+    :deep(.title) {
       text-align: left;
       margin-bottom: 43px;
     }
 
-    ::v-deep(label) {
+    :deep(label) {
       margin-bottom: 18px;
     }
 
-    ::v-deep(.add-card-buttons) {
+    :deep(.add-card-buttons) {
       text-align: right;
       button:first-child {
         margin-right: 4px;

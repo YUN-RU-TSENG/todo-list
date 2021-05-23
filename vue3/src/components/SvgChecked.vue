@@ -14,7 +14,7 @@
 </template>
 
 <script>
-export default {
-  name: 'SvgChecked'
-}
+  export default {
+    name: 'SvgChecked',
+  };
 </script>
