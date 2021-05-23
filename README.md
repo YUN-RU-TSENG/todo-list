@@ -46,6 +46,7 @@
 
 ## 項目簡介
 
+<br />
 <div align="center">
     <img src="https://i.imgur.com/kcXFF9y.png" alt="project img" width="80%"/>
 </div>
