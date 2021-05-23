@@ -20,21 +20,27 @@
             </div>
             <form class="add-card add-card"
                   style="display: none;">
-                  <h2 class="primary title dark">ADD TODO</h2> <label class="input">事項：<input class="text"
+                  <h2 class="primary title dark">ADD TODO</h2> <label class="input">事項：
+                        <input class="text"
                                type="text"
-                               required="required"></label> <label class="select">
+                               required="required"></label>
+                  <label class="select">
                         重要程度
                         <select name="level"
                                 class="level"
                                 required="required">
                               <option value=""
-                                      disabled="disabled">--請選擇需要的項目--</option>
+                                      disabled="disabled"
+                                      selected>--請選擇需要的項目--</option>
                               <option value="hight-level">高等</option>
                               <option value="medium-level">中等</option>
                               <option value="low-level">低等</option>
-                        </select></label> <label class="input">代辦時間：<input class="time"
+                        </select>
+                  </label>
+                  <label class="input">代辦時間：
+                        <input class="time"
                                type="date"
-                               required="required"></label>
+                               required="required" min="2018-01-01"></label>
                   <div class="add-card-buttons">
                         <button class="form-cancel button secondary"
                                 type="button">Cancel</button>
