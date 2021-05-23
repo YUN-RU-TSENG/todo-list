@@ -46,7 +46,7 @@
 
 ## 項目簡介
 
-![TODO List](https://i.imgur.com/MuMXUNd.png)
+<img src="https://i.imgur.com/xrlo94Y.png" alt="Logo" width="100%">
 
 簡易的 TODO List，可以隨手紀錄代辦事項。
 
