@@ -63,7 +63,7 @@
 ### Vanilla JS
 * Javascript(Proxy)
 * SCSS、HTML5
-* Day.js
+* Dayjs
 
 ### Vue2
 * CDN Vue2
@@ -74,7 +74,7 @@
 * Vue CLI
 * Vue3
 * SCSS、HTML5
-* Day.js
+* Dayjs
 
 ### Installation
 
