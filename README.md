@@ -49,6 +49,7 @@
 <img src="https://i.imgur.com/yH8ADnF.png" alt="project img" width="100%">
 
 簡易的 TODO List，可以隨手紀錄代辦事項。
+設計稿為自行設計。
 
 ## 項目功能
 
@@ -74,10 +75,6 @@
 * Vue3
 * SCSS、HTML5
 * Day.js
-
-### 設計稿
-
-[https://example.com](https://example.com)
 
 ### Installation
 
