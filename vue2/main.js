@@ -37,7 +37,7 @@ const vm = new Vue({
       time: null,
       level: "",
     },
-    minDate: dayjs().format('YYYY-MM-DD'),
+    minDate: dayjs().format("YYYY-MM-DD"),
     // 表單編輯模式，一共有新增、更新
     editMode: "add",
     isShow: false,
