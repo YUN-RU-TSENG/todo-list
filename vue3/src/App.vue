@@ -16,17 +16,18 @@
                  formateTime: formateDate(item.time)
                }"
                 @deleteTodo="deleteTodo($event)"
-                @editTodo="setCacheTodo($event), toggle()"
+                @editTodo="setCacheTodo($event), setEditMode('update'), toggle()"
                 :key="item.ID" />
     </template>
     <AddCard v-show="isShow"
              v-model:name="cacheTodo.name"
              v-model:level="cacheTodo.level"
              v-model:time="cacheTodo.time"
+             :minDate="minDate"
              :editMode="editMode"
              :options="levelOption"
-             @cancel="toggle(), resetCacheTodo()"
-             @submit="setTodo(), toggle(), resetCacheTodo()" />
+             @cancel="toggle(), resetCacheTodo(), setEditMode('add')"
+             @submit="setTodo(), toggle(), resetCacheTodo(), setEditMode('add')" />
     <button class="add"
             @click="toggle">
       <svg-add />
@@ -39,6 +40,7 @@
   import SvgAdd from './components/SvgAdd.vue';
   import AddCard from './components/AddCard.vue';
   import TodoItem from './components/TodoItem.vue';
+  import { reactive, ref } from '@vue/reactivity';
 
   export default {
     name: 'app',
@@ -47,25 +49,34 @@
       TodoItem,
       AddCard,
     },
-    data: function () {
+    setup() {
+      const {
+        todo,
+        setTodo,
+        deleteTodo,
+        cacheTodo,
+        setCacheTodo,
+        resetCacheTodo,
+        editMode,
+        setEditMode
+      } = todoCRUD();
+      const { tagStyle, tagText, formateDate } = formateStyle();
+      const { toggle, isShow } = toggleForm();
+
       return {
-        todo: [
-          // {
-          //   name: '',
-          //   ID: null,
-          //   time: null,
-          //   level: '',
-          // },
-        ],
-        cacheTodo: {
-          name: '',
-          ID: null,
-          time: null,
-          level: '',
-        },
-        // 表單編輯模式，一共有新增、更新
-        editMode: 'add',
-        isShow: false,
+        todo,
+        setTodo,
+        deleteTodo,
+        cacheTodo,
+        setCacheTodo,
+        resetCacheTodo,
+        editMode,
+        setEditMode,
+        tagStyle,
+        tagText,
+        formateDate,
+        isShow,
+        toggle,
         levelOption: [
           {
             value: 'hight-level',
@@ -80,68 +91,114 @@
             text: '低等',
           },
         ],
+        minDate: dayjs().format('YYYY-MM-DD')
       };
     },
-    methods: {
-      addTodo() {
-        this.todo.push({ ...this.cacheTodo, ID: Date.now().toString() });
-      },
-      updateTodo() {
-        const index = this.todo.findIndex(
-          (item) => item.ID === this.cacheTodo.ID
-        );
-        this.todo.splice(index, 1, this.cacheTodo);
-      },
-      deleteTodo(ID) {
-        const index = this.todo.findIndex((item) => item.ID === ID);
-        this.todo.splice(index, 1);
-      },
-      toggle() {
-        this.isShow = !this.isShow;
-      },
-      resetCacheTodo() {
-        this.editMode = 'add';
-        this.cacheTodo = {
-          name: '',
-          ID: null,
-          time: null,
-          level: '',
-        };
-      },
-      setCacheTodo(todoID) {
-        this.editMode = 'update';
-        this.cacheTodo = { ...this.todo.find((item) => item.ID === todoID) };
-      },
-      // 表單會隨著新增、編輯不同模式變動資料
-      setTodo() {
-        if (this.editMode === 'update') this.updateTodo();
-        if (this.editMode === 'add') this.addTodo();
-      },
-      tagStyle(todoLevel) {
-        switch (todoLevel) {
-          case 'hight-level':
-            return 'blue';
-          case 'medium-level':
-            return 'green';
-          case 'low-level':
-            return 'orange';
-        }
-      },
-      tagText(todoLevel) {
-        switch (todoLevel) {
-          case 'hight-level':
-            return '重度';
-          case 'medium-level':
-            return '中度';
-          case 'low-level':
-            return '輕度';
-        }
-      },
-      formateDate(todoTime) {
-        return dayjs(todoTime).format('YYYY 年 MM 月 DD 日');
-      },
-    },
   };
+
+
+  function todoCRUD() {
+
+    const todo = reactive([]);
+    const editMode = ref('add');
+    let cacheTodo = reactive({ name: '', ID: null, time: null });
+
+    function setTodo() {
+      if (editMode.value === 'update') updateTodo();
+      if (editMode.value === 'add') addTodo();
+    }
+
+    function addTodo() {
+      todo.push({ ...cacheTodo, ID: Date.now().toString() });
+    }
+
+    function updateTodo() {
+      const index = todo.findIndex((item) => item.ID === cacheTodo.ID);
+      todo.splice(index, 1, { ...cacheTodo });
+    }
+
+    function deleteTodo(ID) {
+      const index = todo.findIndex((item) => item.ID === ID);
+      todo.splice(index, 1);
+    }
+
+    function resetCacheTodo() {
+      cacheTodo.name = '';
+      cacheTodo.ID = null;
+      cacheTodo.time = null;
+      cacheTodo.level = '';
+    }
+
+    function setCacheTodo(todoID) {
+      const currentTodo = { ...todo.find((item) => item.ID === todoID) };
+      cacheTodo.name = currentTodo.name;
+      cacheTodo.ID = currentTodo.ID;
+      cacheTodo.time = currentTodo.time;
+      cacheTodo.level = currentTodo.level;
+    }
+
+    function setEditMode(mode) {
+      editMode.value = mode
+    }
+
+    return {
+      setTodo,
+      todo,
+      cacheTodo,
+      resetCacheTodo,
+      deleteTodo,
+      setCacheTodo,
+      editMode,
+      setEditMode
+    };
+  }
+
+
+  function formateStyle() {
+    function tagStyle(todoLevel) {
+      switch (todoLevel) {
+        case 'hight-level':
+          return 'blue';
+        case 'medium-level':
+          return 'green';
+        case 'low-level':
+          return 'orange';
+      }
+    }
+    function tagText(todoLevel) {
+      switch (todoLevel) {
+        case 'hight-level':
+          return '重度';
+        case 'medium-level':
+          return '中度';
+        case 'low-level':
+          return '輕度';
+      }
+    }
+    function formateDate(todoTime) {
+      return dayjs(todoTime).format('YYYY 年 MM 月 DD 日');
+    }
+
+    return {
+      tagStyle,
+      tagText,
+      formateDate,
+    };
+  }
+
+
+  function toggleForm() {
+    const isShow = ref(false);
+
+    function toggle() {
+      isShow.value = !isShow.value;
+    }
+
+    return {
+      toggle,
+      isShow,
+    };
+  }
 </script>
 
 <style lang="scss">

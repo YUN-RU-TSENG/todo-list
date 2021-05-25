@@ -19,6 +19,7 @@
     <BaseInput label="代辦時間"
                required
                type="date"
+               :min="minDate"
                :value="time"
                @update:value="$emit('update:time', $event)" />
     <div class="add-card-buttons">
@@ -56,8 +57,12 @@
         type: String,
         required: true,
       },
+      minDate: {
+        type: String,
+        required: true,
+      },
     },
-    emits: ['submit', 'update:level', 'update:name', 'update:time'],
+    emits: ['submit', 'update:level', 'update:name', 'update:time', 'cancel'],
   };
 </script>
 
