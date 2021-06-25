@@ -11,11 +11,7 @@
     一個包含 Vanilla JS、Vue2、Vue3 版本的 TODO list 練習項目。
     <br />
     <br />
-    <a href="https://yun-ru-tseng.github.io/todo-list/vanilla-js/index.html">Vanilla js Demo</a>
-        .
-    <a href="https://yun-ru-tseng.github.io/todo-list/vue2/index.html">Vue2 Demo</a>
-    .
-    <a href="https://github.com/YUN-RU-TSENG/todo-list/vue3/dist/index.html">Vue3 Demo</a>
+    <a href="https://yun-ru-tseng.github.io/todo-list/index.html">Vanilla js Demo</a>
   </p>
 </p>
 
