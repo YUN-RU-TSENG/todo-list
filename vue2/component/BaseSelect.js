@@ -1,5 +1,5 @@
 export default {
-  name: "BaseSelect",
+  name: 'BaseSelect',
   template: `
     <label class="select">
     {{ label }}
@@ -9,8 +9,8 @@ export default {
         </select>
     </label>`,
   model: {
-    prop: "value",
-    event: "change",
+    prop: 'value',
+    event: 'change',
   },
   props: {
     label: {
@@ -30,4 +30,4 @@ export default {
     },
   },
   inheritAttrs: false,
-};
+}

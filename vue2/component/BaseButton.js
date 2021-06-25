@@ -1,5 +1,5 @@
 export default {
-  name: "BaseButton",
+  name: 'BaseButton',
   template: `
     <button class="button" :class="[level]"><slot></slot></button>
     `,
@@ -8,8 +8,8 @@ export default {
       type: String,
       required: true,
       validation(val) {
-        return ["primary", "secondary"].includes(val);
+        return ['primary', 'secondary'].includes(val)
       },
     },
   },
-};
+}

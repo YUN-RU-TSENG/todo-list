@@ -1,6 +1,6 @@
 export default {
-  name: "TodoItem",
+  name: 'TodoItem',
   template: `
     <section class="todo"><slot></slot></section>
     `,
-};
+}

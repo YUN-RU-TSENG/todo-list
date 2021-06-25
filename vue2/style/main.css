@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -16,25 +18,25 @@ button:active, button:visited, button:checked, button:focus {
 }
 
 .tag.blue {
-  background-color: #24C3C2;
+  background-color: #24c3c2;
 }
 
 .tag.green {
-  background-color: #A4C324;
+  background-color: #a4c324;
 }
 
 .tag.orange {
-  background-color: #C69B93;
+  background-color: #c69b93;
 }
 
 .title.primary {
   font: normal normal normal 20px Helvetica Neue;
-  color: #9FA3A7;
+  color: #9fa3a7;
 }
 
 .title.secondary {
   font: normal normal normal 16px Helvetica Neue;
-  color: #9FA3A7;
+  color: #9fa3a7;
 }
 
 .title.third {
@@ -44,31 +46,31 @@ button:active, button:visited, button:checked, button:focus {
 
 .title.dark.primary {
   font: normal normal bold 20px Helvetica Neue;
-  color: #6F7377;
+  color: #6f7377;
 }
 
 .title.dark.secondary {
   font: normal normal bold 16px Helvetica Neue;
-  color: #6F7377;
+  color: #6f7377;
 }
 
 .title.dark.third {
   font: normal normal bold 12px Helvetica Neue;
-  color: #6F7377;
+  color: #6f7377;
 }
 
 .input {
   display: block;
   text-align: left;
   font: normal normal bold 16px/19px Helvetica Neue;
-  color: #6F7377;
+  color: #6f7377;
 }
 
 .input input {
   margin-top: 7px;
   width: 100%;
-  background: #F7F7F7 0% 0% no-repeat padding-box;
-  border: 1px solid #B5BABF;
+  background: #f7f7f7 0% 0% no-repeat padding-box;
+  border: 1px solid #b5babf;
   border-radius: 4px;
   outline: none;
   font: normal normal normal 16px/18px Helvetica Neue;
@@ -76,7 +78,7 @@ button:active, button:visited, button:checked, button:focus {
 }
 
 .input input:checked, .input input:active, .input input:focus {
-  border: 1px solid #24C3C2;
+  border: 1px solid #24c3c2;
 }
 
 .button {
@@ -88,29 +90,29 @@ button:active, button:visited, button:checked, button:focus {
 }
 
 .button:hover {
-  background: #F7F7F7 0% 0% no-repeat padding-box;
+  background: #f7f7f7 0% 0% no-repeat padding-box;
 }
 
 .button.primary {
-  color: #24C3C2;
+  color: #24c3c2;
 }
 
 .button.secondary {
-  color: #6F7377;
+  color: #6f7377;
 }
 
 .select {
   display: block;
   text-align: left;
   font: normal normal bold 16px/19px Helvetica Neue;
-  color: #6F7377;
+  color: #6f7377;
 }
 
 .select select {
   margin-top: 7px;
   width: 100%;
-  background: #F7F7F7 0% 0% no-repeat padding-box;
-  border: 1px solid #B5BABF;
+  background: #f7f7f7 0% 0% no-repeat padding-box;
+  border: 1px solid #b5babf;
   border-radius: 4px;
   outline: none;
   font: normal normal normal 16px/18px Helvetica Neue;
@@ -118,7 +120,7 @@ button:active, button:visited, button:checked, button:focus {
 }
 
 body {
-  background-color: #2E3545;
+  background-color: #2e3545;
 }
 
 #app {
@@ -142,7 +144,7 @@ body {
 }
 
 .todo {
-  background-color: #252B3C;
+  background-color: #252b3c;
   border-radius: 4px;
   padding: 24px;
 }
@@ -185,7 +187,7 @@ body {
 }
 
 .add-card {
-  background: #EEEEEE 0% 0% no-repeat padding-box;
+  background: #eeeeee 0% 0% no-repeat padding-box;
   border-radius: 4px;
   padding: 36px 24px;
   width: 90%;
@@ -223,7 +225,7 @@ body {
 }
 
 button.add {
-  background: #24C3C2 0% 0% no-repeat padding-box;
+  background: #24c3c2 0% 0% no-repeat padding-box;
   border-radius: 60px;
   position: fixed;
   width: 60px;
@@ -237,5 +239,9 @@ button.add {
 
 button.add svg {
   width: 32px;
+}
+
+.finish {
+  opacity: .5;
 }
 /*# sourceMappingURL=main.css.map */

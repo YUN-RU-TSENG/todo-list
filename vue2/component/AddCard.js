@@ -1,6 +1,6 @@
 export default {
-  name: "AddCard",
+  name: 'AddCard',
   template: `
     <form class="add-card" @submit.prevent="$emit('submit')"><slot></slot></form>
     `,
-};
+}

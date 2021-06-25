@@ -36,6 +36,7 @@ const vm = new Vue({
       ID: null,
       time: null,
       level: '',
+      finish: false,
     },
     minDate: dayjs().format('YYYY-MM-DD'),
     // 表單編輯模式，一共有新增、更新
@@ -83,6 +84,10 @@ const vm = new Vue({
       this.editMode = 'update'
       this.cacheTodo = { ...this.todo.find((item) => item.ID === todoID) }
     },
+    finishTodo(todoID) {
+      const index = this.todo.findIndex((item) => item.ID === todoID)
+      this.todo[index].finish = !this.todo[index].finish
+    },
     // 表單會隨著新增、編輯不同模式變動資料
     setTodo() {
       if (this.editMode === 'update') this.updateTodo()
@@ -116,13 +121,13 @@ const vm = new Vue({
     <main id="app">
         <base-title tag="h1" level="primary" class="todo-title">待辦清單</base-title>
         <todo-item v-if="todo.length === 0"><base-title tag="h2" level="secondary">尚無代辦事項，請新增。✏️</base-title></todo-item>
-        <todo-item v-else class="todo" v-for="(item, index) of todo" :key="item.ID">
+        <todo-item v-else :class="['todo' , item.finish ? 'finish' : '']" v-for="(item, index) of todo" :key="item.ID">
             <base-tag :color="tagStyle(item.level)">{{ tagText(item.level) }}</base-tag>
             <base-title tag="h2" level="secondary">{{ item.name }}</base-title>
             <base-title tag="p" level="third">{{ formateDate(item.time) }}</base-title>
             <button @click="deleteTodo(index)"><svg-bucket/></button>
             <button @click="updateCacheTodo(item.ID), toggle()"><svg-pencil/></button>
-            <button @click=""><svg-checked/></button>
+            <button @click="finishTodo(item.ID)"><svg-checked/></button>
         </todo-item>
         <add-card class="add-card"
                 v-show="isShow"
@@ -151,7 +156,7 @@ const vm = new Vue({
                         v-if="editMode === 'update'"
                         type="submit">Update</base-button>
                 <base-button level="primary"
-                v-if="editMode === 'add'"
+                        v-if="editMode === 'add'"
                         type="submit">ADD</base-button>
             </div>
         </add-card>
