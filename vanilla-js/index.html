@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>代辦清單</title>
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
 
-<head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible"
-            content="IE=edge">
-      <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
-      <title>代辦清單</title>
-      <link rel="stylesheet"
-            href="./style/main.css">
-</head>
-
-<body>
-      <main id="app">
-            <h1 class="todo-title primary title">待辦清單</h1>
-            <div class="todo-wrapper">
-                  <section class="todo"></section>
-            </div>
-            <form class="add-card add-card"
-                  style="display: none;">
-                  <h2 class="primary title dark">ADD TODO</h2> <label class="input">事項：
-                        <input class="text"
-                               type="text"
-                               required="required"></label>
-                  <label class="select">
-                        重要程度
-                        <select name="level"
-                                class="level"
-                                required="required">
-                              <option value=""
-                                      disabled="disabled"
-                                      selected>--請選擇需要的項目--</option>
-                              <option value="hight-level">高等</option>
-                              <option value="medium-level">中等</option>
-                              <option value="low-level">低等</option>
-                        </select>
-                  </label>
-                  <label class="input">代辦時間：
-                        <input class="time"
-                               type="date"
-                               required="required"
-                               min="2018-01-01"></label>
-                  <div class="add-card-buttons">
-                        <button class="form-cancel button secondary"
-                                type="button">Cancel</button>
-                        <button class="form-add button primary"
-                                type="submit">ADD</button>
-                        <button class="form-update button primary"
-                                type="submit"
-                                style="display: none;">update</button>
-                  </div>
-            </form> <button class="add"><svg xmlns="http://www.w3.org/2000/svg"
-                       viewBox="0 0 24 24">
-                        <line x1="12"
-                              y1="8"
-                              x2="12"
-                              y2="16"
-                              fill="#fff"
-                              stroke="#000"
-                              stroke-miterlimit="10"></line>
-                        <line x1="16"
-                              y1="12"
-                              x2="8"
-                              y2="12"
-                              fill="#fff"
-                              stroke="#000"
-                              stroke-miterlimit="10"></line>
-                  </svg></button>
-      </main>
-      <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-      <script src="./main.js"></script>
-</body>
-
+  <body>
+    <main id="app">
+      <h1 class="todo-title primary title">待辦清單</h1>
+      <div class="todo-wrapper">
+        <section class="todo"></section>
+      </div>
+      <form class="add-card add-card" style="display: none">
+        <h2 class="primary title dark">ADD TODO</h2>
+        <label class="input"
+          >事項： <input class="text" type="text" required="required"
+        /></label>
+        <label class="select">
+          重要程度
+          <select name="level" class="level" required="required">
+            <option value="" disabled="disabled" selected>
+              --請選擇需要的項目--
+            </option>
+            <option value="hight-level">高等</option>
+            <option value="medium-level">中等</option>
+            <option value="low-level">低等</option>
+          </select>
+        </label>
+        <label class="input"
+          >代辦時間：
+          <input class="time" type="date" required="required" min="2018-01-01"
+        /></label>
+        <div class="add-card-buttons">
+          <button class="form-cancel button secondary" type="button">
+            Cancel
+          </button>
+          <button class="form-add button primary" type="submit">ADD</button>
+          <button
+            class="form-update button primary"
+            type="submit"
+            style="display: none"
+          >
+            update
+          </button>
+        </div>
+      </form>
+      <button class="add">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <line
+            x1="12"
+            y1="8"
+            x2="12"
+            y2="16"
+            fill="#fff"
+            stroke="#000"
+            stroke-miterlimit="10"
+          ></line>
+          <line
+            x1="16"
+            y1="12"
+            x2="8"
+            y2="12"
+            fill="#fff"
+            stroke="#000"
+            stroke-miterlimit="10"
+          ></line>
+        </svg>
+      </button>
+    </main>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*  本檔案為顏色全域變數，備注：文字顏色在 typography 檔案中 */
+/* 本檔案為字體設置，包含字體引入、樣式、mixin、字體顏色 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/**
+* font-color: 使用方法：map-get($font-color , "primary")
+* 文字顏色，共依照使用情境分為三種顏色
+* primary 標題
+* regular 內文
+* placeholder 佔位符
+*/
+/**
+* 文字 mixin
+* 使用方法： @include font($size: 12px, $family: $font-primary);
+* 依序設置文字：字重、大小、字體、顏色
+*
+* font 簡寫規則：[ [ <'font-style'> || <font-variant-css21> || <'font-weight'> ||
+* <'font-stretch'> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'> ]
+*
+* 在此有多個默認參數，所以每個值不一定需要填寫即有預設值，需要填寫的要寫上 $xxx: 給的數值
+* @include font($weight: bold, $size: 12px, $family: $font-primary, $color: map-get($font-color , "primary"));
+*/
+/*  本檔案為斷點 mixin */
+/**
+* 斷點 mixin
+* 使用方法：在需要斷點位置添加以下語法，依照需求有電腦、平板、手機：
+*
+* 斷點，分為以下三種：
+* desktop 指的是在電腦以上包含電腦的斷點
+* tablet 指的是在平板以上包含平板的斷點
+* phone 指的是在手機以上包含手機的斷點
+*
+* @include MediaQuery(desktop) {
+*   padding: 24px;
+* }
+* @include MediaQuery(tablet) {
+*   padding: 24px;
+* }
+* @include MediaQuery(phone) {
+*   padding: 24px;
+* }
+*
+*/
+/*# sourceMappingURL=main.css.map */
