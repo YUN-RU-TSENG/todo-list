@@ -19,8 +19,6 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>目錄</summary>
@@ -43,7 +41,6 @@
   </ol>
 </details>
 
-
 ## 項目簡介
 
 <br />
@@ -58,28 +55,31 @@
 
 ## 項目功能
 
-* CRUD 代辦事項
-* 區分完成、未完成待辦事項
-* 可針對代辦事項添加日期、重要程度
-* 表單驗證功能（採用 HTML5 表單驗證）
+- CRUD 代辦事項
+- 區分完成、未完成待辦事項
+- 可針對代辦事項添加日期、重要程度
+- 表單驗證功能（採用 HTML5 表單驗證）
 
 ## 項目技術
 
 ### Vanilla JS
-* Javascript
-* SCSS、HTML5
-* Dayjs
+
+- Javascript
+- SCSS、HTML5
+- Dayjs
 
 ### Vue2
-* CDN Vue2
-* SCSS、HTML5
-* Dayjs
+
+- CDN Vue2
+- SCSS、HTML5
+- Dayjs
 
 ### Vue3
-* Vue CLI
-* Vue3
-* SCSS、HTML5
-* Dayjs
+
+- Vue CLI
+- Vue3
+- SCSS、HTML5
+- Dayjs
 
 ### Installation
 
