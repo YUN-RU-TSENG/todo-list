@@ -1,4 +1,3 @@
-<template>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <polyline
       points="14.5 4 4 4 4 20 20 20 20 12"
@@ -13,10 +12,3 @@
       stroke-miterlimit="10"
     />
   </svg>
-</template>
-
-<script>
-export default {
-  name: "SvgChecked"
-};
-</script>

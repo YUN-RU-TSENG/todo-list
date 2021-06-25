@@ -1,36 +1,36 @@
 /*  本檔案為顏色全域變數，備注：文字顏色在 typography 檔案中 */
 
 // 基礎色
-$blue:    #409EFF;
-$red:     #F56C6C;
-$orange:  rgb(230, 162, 60);
-$yellow:  #ffc200;
+$blue: #409eff;
+$red: #f56c6c;
+$orange: rgb(230, 162, 60);
+$yellow: #ffc200;
 $yellow-20: #ffc20020;
 $yellow-40: #ffc20040;
-$green:   #67C23A;
-$gray:    #303030;
-$gray-05:    #30303005;
-$gray-10:    #30303010;
+$green: #67c23a;
+$gray: #303030;
+$gray-05: #30303005;
+$gray-10: #30303010;
 // -20 代表透明度 20 %
 $gray-20: #30303020;
 // -30 代表透明度 30 %
 $gray-30: #30303030;
 // -50 代表透明度 50 %
 $gray-50: #30303050;
-$pale:    #cfcfcf;
-$white:   #FFFFFF;
-$black:   #000000;
+$pale: #cfcfcf;
+$white: #ffffff;
+$black: #000000;
 
 // 主題色
-$primary:   $yellow;
-$primary-20:   $yellow-20;
-$primary-40:   $yellow-40;
-$success:   $blue;
-$info:      $green;
-$secondary:   $orange;
-$danger:    $red;
-$light:     $white;
-$dark:      $black;
+$primary: $yellow;
+$primary-20: $yellow-20;
+$primary-40: $yellow-40;
+$success: $blue;
+$info: $green;
+$secondary: $orange;
+$danger: $red;
+$light: $white;
+$dark: $black;
 
 // 背景
 $bg-primary: $gray;

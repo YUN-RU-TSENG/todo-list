@@ -1,12 +1,13 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+
+const app = createApp(App);
+
 import BaseButton from "./components/base/BaseButton.vue";
 import BaseTitle from "./components/base/BaseTitle.vue";
 import BaseInput from "./components/base/BaseInput.vue";
 import BaseTag from "./components/base/BaseTag.vue";
 import BaseSelect from "./components/base/BaseSelect.vue";
-
-const app = createApp(App);
 
 app.component("BaseButton", BaseButton);
 app.component("BaseTitle", BaseTitle);

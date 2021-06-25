@@ -20,33 +20,32 @@ html {
   font-size: 16px;
 }
 
-
 body {
   /* Hide scrollbar for Chrome, Safari and Opera */
-    background-color: #2E3545;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  background-color: #2e3545;
+  &::-webkit-scrollbar {
+    display: none;
   }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
-  button {
-    &:active, &:visited, &:checked, &:focus {
-        outline: none;
-    }
+button {
+  &:active,
+  &:visited,
+  &:checked,
+  &:focus {
+    outline: none;
   }
-
-
+}
 
 a {
   text-decoration: none;
 }
 
-
 // 清除浮動
 .clearfix {
-  &::after{
+  &::after {
     content: '';
     display: block;
     clear: both;
