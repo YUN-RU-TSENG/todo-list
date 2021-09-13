@@ -82,7 +82,7 @@ $inputText.addEventListener('input', updateInputValue('text'))
 $inputTime.addEventListener('input', updateInputValue('time'))
 $selectLevel.addEventListener('input', updateInputValue('level'))
 
-// 當更改、刪除事件時，會透過事件代理半段元素上的 data-edit 狀態決定刪除、修改當前元素
+// 當更改、刪除事件時，會透過事件代理判斷元素上的 data-edit 狀態決定刪除、修改當前元素
 function editTodo(e) {
   if (e.target.dataset.edit === 'update') {
     proxyData.cacheTodo = {
@@ -98,13 +98,12 @@ function editTodo(e) {
 
 function finishTodoItem(e) {
   if (e.target.dataset.edit === 'finish') {
-    const todo = proxyData.todo.find((item) => item.id == e.target.dataset.id)
-    if (todo.finish) {
-      todo.finish = !todo.finish
-      $todoWrapper.classList.add('finish')
-    } else {
-      todo.finish = !todo.finish
-      $todoWrapper.classList.remove('finish')
+    const index = proxyData.todo.findIndex(
+      (item) => item.id == e.target.dataset.id
+    )
+    proxyData.todo[index] = {
+      ...proxyData.todo[index],
+      finish: !proxyData.todo[index].finish,
     }
   }
 }
@@ -132,8 +131,8 @@ function updateEditMode(mode) {
 
 function renderTodo() {
   const list = document.querySelector('div.todo-wrapper')
-  const item = ({ time, text, level, id }) => `
-    <section class="todo">
+  const item = ({ time, text, level, id, finish }) => `
+    <section class="todo ${finish ? 'finish' : ''}">
         <span class="tag ${tagStyle(level)}">${tagText(level)}</span>
         <h2 class="secondary title">${text}</h2>
         <p class="third title">${dayjs(time).format('YYYY-MM-DD')}</p>
@@ -168,7 +167,13 @@ function toggleElement(element) {
 }
 
 function resetCacheTodo() {
-  proxyData.cacheTodo = {}
+  proxyData.cacheTodo = {
+    time: null,
+    text: null,
+    level: null,
+    id: null,
+    finish: false,
+  }
 }
 
 function addTodo(newTodo) {
